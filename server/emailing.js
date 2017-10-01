@@ -10,24 +10,21 @@ var money_formatter = new Intl.NumberFormat('en-US', {
 
 var format_invoice_html = function (form) {
   // To be changed A LOT!!!
-  
   console.log("PORTTTTTT: " + (process.env.PORT||5000));
   var message = [];
   
-  // empleados:1,
-  // extra: 1, => new name?
-  var ignore_attributes = {email: 1, to: 1, extra: 1, subject:1, };
-  var money_attributes  = {precio: 1, materiales: 1, total: 1,};
+  // var ignore_attributes = {email: 1, to: 1, extra: 1, subject:1, };
+  // var money_attributes  = {precio: 1, materiales: 1, total: 1,};
 
   var attributes = Object.keys(form);
   attributes.forEach(function(atr) {
-    if (!(atr in ignore_attributes) && form[atr]) {
-      if (atr in money_attributes) {
-        form[atr] = money_formatter.format(form[atr]);
-      }
+    message.push(["<b>", atr.toUpperCase(), "</b>: ", form[atr]].join(""));
 
-      message.push(["<b>", atr.toUpperCase(), "</b>: ", form[atr]].join(""));
-    }
+    // if (!(atr in ignore_attributes) && form[atr]) {
+    //   if (atr in money_attributes) {
+    //     form[atr] = money_formatter.format(form[atr]);
+    //   }
+    // }
   });
 
   return message.join("<br>");
@@ -44,10 +41,11 @@ module.exports = function (req, res) {
       req.body.subject = ["Factura de", req.body.cliente].join(" ");
     }
     
+    // Doble verify time here... or not!
     message = format_invoice_html(req.body);
   }
   else {
-    // hadler simple logger
+    // handle simple logger
     req.body = {to: message, subject: "Prueba"};
     message = JSON.stringify(req.body);
   }

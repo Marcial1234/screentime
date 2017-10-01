@@ -15,6 +15,7 @@ angular.module('Electric').controller('ElectricController',
       $scope.time_to_go -= 1000;
       t = $scope.time_to_go;
 
+      // Ugly but only way I got it to work ~
       $("#days_left").text(Math.floor(t / (1000 * 60 * 60 * 24)));
       $("#hours_left").text(Math.floor((t / (1000 * 60 * 60)) % 24));
       $("#minutes_left").text(Math.floor((t / 1000 / 60) % 60));
