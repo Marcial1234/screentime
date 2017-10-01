@@ -5,6 +5,7 @@
   "version": "0.2.6",
   "description": "Screen Time - [Fancy marketing thing here]",
   "scripts": {
+    "first-install": "npm install && gulp install",
     "start": "npm install && node index.js",
     "test": "node test.js"
   },
