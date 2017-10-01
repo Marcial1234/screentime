@@ -6,6 +6,11 @@ var exec = require('child_process').exec;
 var nodemon = require('gulp-nodemon');
 
 gulp.task('default', ['get-config', 'nodemon', 'browser-sync']);
+gulp.task('install', ['npm', 'default']);
+
+gulp.task('npm', function(cb) {
+    exec("npm install -g gulp");
+});
 
 gulp.task('get-config', function(cb) {
     exec("heroku config -s > .env");

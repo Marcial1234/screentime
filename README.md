@@ -6,6 +6,6 @@
 
 ## Installation
 - Clone
-- Run `npm install -g gulp`
-- Then run `gulp` for automatic server and front end restart
+- Run `npm run first-install`
+- Then run `gulp` for automatic server and front end restart every time after that
 - Let me know for actual deployments

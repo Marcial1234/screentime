@@ -5,11 +5,12 @@
   "version": "0.2.6",
   "description": "Screen Time - [Fancy marketing thing here]",
   "scripts": {
+    "first-install": "npm install && gulp install",
     "start": "npm install && node index.js",
     "test": "node test.js"
   },
   "dependencies": {
-    "atob": "^2.0.3",
+    "atob": "2.0.3",
     "body-parser": "1.18.1",
     "browser-sync": "2.18.13",
     "dotenv": "4.0.0",
