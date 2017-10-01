@@ -1,26 +1,37 @@
 body {
-    font-family: Helvetica, sans-serif;
-    height: -webkit-fill-available;
-    background: linear-gradient(to top right, #fc00ff, #00dbde);
-    background-repeat: no-repeat;
-    height: 1000px;
-    overflow: hidden;
+  overflow: hidden;
+  height: 1000px;
+  height: -webkit-fill-available;
+  background: linear-gradient(to top right, #fc00ff, #00dbde);
+  background-repeat: no-repeat;
+  font-family: Helvetica, sans-serif;
+}
+
+#app{
+  /* CSS Grids!!! OP */
+  /* Flex box is needed on the below */
+  display: grid;
+  grid-template-rows: 11fr 2fr 5fr 3fr;
+  grid-template-columns: 2fr 4fr 2fr;
 }
 
 form input {
-    margin-bottom: 1rem;
-    display: block;
-    width: 100%;
-    padding: .5rem .75rem;
-    font-size: 1rem;
-    line-height: 1.25;
-    color: #495057;
-    background-color: #fff;
-    background-image: none;
-    background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.15);
-    border-radius: .25rem;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  display: block;
+  
+  width: 100%;
+  color: #495057;
+  padding: .5rem .75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+
+  background-color: #fff;
+  background-image: none;
+  background-clip: padding-box;
+
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: .25rem;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
 /*
@@ -33,25 +44,35 @@ h1 {
 */
 
 #clockdiv {
-  font-family: sans-serif;
-  color: #fff;
-  font-weight: 100;
+  /*width: 400px;*/
+  background: black;
   text-align: center;
-  font-size: 30px;
+  /*border-radius: 3px;*/
+
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  
+  font-size: 40px;
+  font-weight: 100;
+  font-family: sans-serif;
 }
 
 #clockdiv > div {
+  color: white;
+  width: 105px;
   padding: 10px;
-  border-radius: 3px;
-  background: #00bf96;
-  display: inline-block;
+
+  /*background: #00bf96;*/
+  /*display: inline-block;*/
 }
 
 #clockdiv div > span {
   padding: 15px;
   border-radius: 3px;
-  background: #00816a;
-  display: inline-block;
+
+  /*background: #00816a;*/
+  /*display: inline-block;*/
 }
 
 .smalltext {
@@ -59,91 +80,99 @@ h1 {
   font-size: 16px;
 }
 
+#formm {
+  grid-row: 3;
+  grid-column: 2;
+}
+
 .title {
-    color: white;
-    text-align: center;
-    margin-top: 50%;
+  grid-row: 2;
+  grid-column: 2;
+  text-align: center;
 }
 
 .money_input:focus {
-    /*padding-left: 20px;*/
-    border-color: green;
-    outline-color: green;
+  border-color: green;
+  outline-color: green;
 }
 
 /*
 .money_input:focus + .money_symbol {
-    color: green;
-    display: inline;
+  color: green;
+  display: inline;
 }
 
- the abosoluteness is not maintainable 
+the abosoluteness is not maintainable 
 .money_symbol {
-    // z-index: 1
-    display: none;
-    position: absolute;
-    font-weight: bold;
+  // z-index: 1
+  display: none;
+  position: absolute;
+  font-weight: bold;
 }
 */
 
 .container {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .center {
-    text-align: center;
+  text-align: center;
+}
+
+.white {
+  color: white;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .nav-pills .nav-link {
-    border-radius: .25rem;
+  border-radius: .25rem;
 }
 
 .nav-link {
-    display: block;
-    padding: .5rem 1rem;
+  display: block;
+  padding: .5rem 1rem;
 }
 
 /* Old */
 .jumbotron {
-    background: #532F8C;
-    color: white;
-    padding-bottom: 80px;
+  background: #532F8C;
+  color: white;
+  padding-bottom: 80px;
 }
 
 .jumbotron .btn-primary {
-    background: #845ac7;
-    border-color: #845ac7;
+  background: #845ac7;
+  border-color: #845ac7;
 }
 
 .jumbotron .btn-primary:hover {
-    background: #7646c1;
+  background: #7646c1;
 }
 
 .jumbotron p {
-    color: #d9ccee;
-    max-width: 75%;
-    margin: 1em auto 2em;
+  color: #d9ccee;
+  max-width: 75%;
+  margin: 1em auto 2em;
 }
 
 .navbar+.jumbotron {
-    margin-top: -20px;
+  margin-top: -20px;
 }
 
 .jumbotron .lang-logo {
-    display: block;
-    background: #B01302;
-    border-radius: 50%;
-    overflow: hidden;
-    width: 100px;
-    height: 100px;
-    margin: auto;
-    border: 2px solid white;
+  display: block;
+  background: #B01302;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  border: 2px solid white;
 }
 
 .jumbotron .lang-logo img {
-    max-width: 100%;
+  max-width: 100%;
 }
