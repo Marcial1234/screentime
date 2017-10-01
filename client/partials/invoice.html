@@ -1,0 +1,47 @@
+<div class="col-md-12 formWrapper">
+
+<br>
+
+<form name="invoice_form" class="form-horizontal" ng-hide="hide_form" ng-submit="email(invoice_form.$valid)">
+  <!-- make a list of vars for the text and placeholders in the controller -->
+  <span ng-show="new_invoice.cliente">Nombre del Cliente</span>
+  <input ng-model="new_invoice.cliente"
+         placeholder="Nombre del Cliente" type="text">
+  <!-- 
+
+  <span ng-show="new_invoice.direcion">Direción del Cliente</span>
+  <input ng-model="new_invoice.direcion"
+         placeholder="Direción del Cliente" type="text">
+
+  <span ng-show="new_invoice.empleados"># de empleados que trabajaron*</span>
+  <input ng-model="new_invoice.empleados" 
+         placeholder="# de empleados que trabajaron*" required type="number" step="any">
+
+  <span ng-show="new_invoice.horas">Horas trabajadas*</span>
+  <input ng-model="new_invoice.horas"
+         placeholder="Horas trabajadas*" required type="number" step="any">
+
+  <span ng-show="new_invoice.precio">Precio/Hora</span>
+  <input ng-model="new_invoice.precio" class="money_input"
+         placeholder="Precio/Hora*" required type="number" step="any">
+   -->
+  <!-- <span ng-show="new_invoice.precio" class="money_symbol" style="top: 305px; left: 23px;">$</span> -->
+
+  <span ng-show="new_invoice.materiales">Precio de materiales*</span>
+  <input ng-model="new_invoice.materiales" class="money_input"
+         placeholder="Precio de materiales*" required type="number" step="any">
+  <!-- <span class="money_symbol" style="top: 359px; left: 23px;">$</span> -->
+
+  <span ng-show="new_invoice.extra">% Arriba de materiales</span>
+  <input ng-model="new_invoice.extra" 
+         placeholder="% Arriba de materiales" class="money_input" type="number" step="any">
+
+  <p class="center"><small class="center">* Requerido</small></p>
+  <div ng-show="error" class="text-danger"> <strong ng-bind="error"></strong> </div>
+  <div ng-show="success" class="text-success"> <strong ng-bind="success"></strong> </div>
+  
+  <input value="Mandamela la factura!" class="btn btn-primary form-group" type="submit"/>
+  <input class="hidden" type="submit"/>
+</form>
+
+</div>

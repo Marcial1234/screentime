@@ -1,0 +1,149 @@
+body {
+    font-family: Helvetica, sans-serif;
+    height: -webkit-fill-available;
+    background: linear-gradient(to top right, #fc00ff, #00dbde);
+    background-repeat: no-repeat;
+    height: 1000px;
+    overflow: hidden;
+}
+
+form input {
+    margin-bottom: 1rem;
+    display: block;
+    width: 100%;
+    padding: .5rem .75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #495057;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+/*
+h1 {
+  color: #396;
+  font-weight: 100;
+  font-size: 40px;
+  margin: 40px 0px 20px;
+}
+*/
+
+#clockdiv {
+  font-family: sans-serif;
+  color: #fff;
+  font-weight: 100;
+  text-align: center;
+  font-size: 30px;
+}
+
+#clockdiv > div {
+  padding: 10px;
+  border-radius: 3px;
+  background: #00bf96;
+  display: inline-block;
+}
+
+#clockdiv div > span {
+  padding: 15px;
+  border-radius: 3px;
+  background: #00816a;
+  display: inline-block;
+}
+
+.smalltext {
+  padding-top: 5px;
+  font-size: 16px;
+}
+
+.title {
+    color: white;
+    text-align: center;
+    margin-top: 50%;
+}
+
+.money_input:focus {
+    /*padding-left: 20px;*/
+    border-color: green;
+    outline-color: green;
+}
+
+/*
+.money_input:focus + .money_symbol {
+    color: green;
+    display: inline;
+}
+
+ the abosoluteness is not maintainable 
+.money_symbol {
+    // z-index: 1
+    display: none;
+    position: absolute;
+    font-weight: bold;
+}
+*/
+
+.container {
+    margin-top: 10px;
+}
+
+.center {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.nav-pills .nav-link {
+    border-radius: .25rem;
+}
+
+.nav-link {
+    display: block;
+    padding: .5rem 1rem;
+}
+
+/* Old */
+.jumbotron {
+    background: #532F8C;
+    color: white;
+    padding-bottom: 80px;
+}
+
+.jumbotron .btn-primary {
+    background: #845ac7;
+    border-color: #845ac7;
+}
+
+.jumbotron .btn-primary:hover {
+    background: #7646c1;
+}
+
+.jumbotron p {
+    color: #d9ccee;
+    max-width: 75%;
+    margin: 1em auto 2em;
+}
+
+.navbar+.jumbotron {
+    margin-top: -20px;
+}
+
+.jumbotron .lang-logo {
+    display: block;
+    background: #B01302;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border: 2px solid white;
+}
+
+.jumbotron .lang-logo img {
+    max-width: 100%;
+}
