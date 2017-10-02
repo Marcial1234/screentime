@@ -1,23 +1,25 @@
+
 body {
-  overflow: hidden;
   height: 1000px;
   height: -webkit-fill-available;
+  overflow: hidden;
+
   background: linear-gradient(to top right, #fc00ff, #00dbde);
   background-repeat: no-repeat;
   font-family: Helvetica, sans-serif;
 }
 
-#app{
+#app {
   /* CSS Grids!!! OP */
   /* Flex box is needed on the below */
   display: grid;
-  grid-template-rows: 11fr 2fr 5fr 3fr;
+  grid-template-rows: 11fr 5fr 5fr 3fr;
   grid-template-columns: 2fr 4fr 2fr;
 }
 
 form input {
   display: block;
-  
+
   width: 100%;
   color: #495057;
   padding: .5rem .75rem;
@@ -45,22 +47,24 @@ h1 {
 
 #clockdiv {
   /*width: 400px;*/
-  background: black;
   text-align: center;
+  justify-self: center;
   /*border-radius: 3px;*/
 
   display: flex;
   display: -webkit-box;
   display: -ms-flexbox;
   
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 100;
   font-family: sans-serif;
 }
 
 #clockdiv > div {
+  background: black;
   color: white;
-  width: 105px;
+
+  width: 95px;
   padding: 10px;
 
   /*background: #00bf96;*/
@@ -76,19 +80,23 @@ h1 {
 }
 
 .smalltext {
-  padding-top: 5px;
   font-size: 16px;
+  padding-top: 5px;
 }
 
 #formm {
   grid-row: 3;
   grid-column: 2;
+  align-self: center;
+  justify-self: center;
 }
 
 .title {
   grid-row: 2;
   grid-column: 2;
   text-align: center;
+
+  font-size: 40px;
 }
 
 .money_input:focus {
@@ -111,10 +119,6 @@ the abosoluteness is not maintainable
 }
 */
 
-.container {
-  margin-top: 10px;
-}
-
 .center {
   text-align: center;
 }
@@ -134,6 +138,52 @@ the abosoluteness is not maintainable
 .nav-link {
   display: block;
   padding: .5rem 1rem;
+}
+
+/* Responsiveness Galore */
+@media (max-height: 1050px) {
+  #app {
+    grid-template-rows: 11fr 2fr 4fr 3fr;
+  }
+}
+
+@media (max-height: 740px) {
+  #app {
+    grid-template-rows: 6.5fr 2fr 4fr 3fr;
+  }
+}
+
+@media (min-height: 1050px) {
+  #app {
+    grid-template-rows: 17fr 2fr 5fr 3fr;
+  }
+
+  h5 {
+    font-size: 25px;
+  }
+
+  .title {
+    font-size: 50px;
+  }
+
+  #clockdiv > div {
+    width: 120px;
+  }
+}
+
+@media (max-width: 740px) {
+  #clockdiv > div {
+    width: 80px;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 350px) {
+  #clockdiv > div {
+    width: 77px;
+    padding: 5px;
+    font-size: 25px;
+  }
 }
 
 /* Old */
