@@ -50,6 +50,7 @@
     </div>
   </div>
 </body>
+
 <script src="/public/angular/angular.js"></script>
 <script src="/public/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="/public/lodash/dist/lodash.min.js"></script>
@@ -63,9 +64,15 @@
 
 <script type="text/javascript">
   $("document").ready(function() {
-    if (!angular) {
+    try {
+      angular;
+    }
+    catch (ReferenceError) {
       // hide all dynamic page elements if can't find anglar
       // and show some an error message gracefuly
+      // $("#clockdiv").addClass("hidden");
+      
+      $("#clockdiv").css("display", "none");
       alert("Plase try running this website again in another device");
     }
   })
