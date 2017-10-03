@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <% include ./partials/header.ejs %>
 </head>
@@ -19,14 +19,14 @@
     </div>
     -->
 
-    <h3 class="white title">ScreenTime</h3>
+    <h3 class="title">ScreenTime</h3>
     <div id="formm" class="row" ng-app="ElectricApp" ng-controller="ElectricController" ng-init="start()">
       <!-- <div style="width: 100%" ui-view></div> -->
       <!-- <ui-view style="width: 100%"></ui-view> -->
 
       <!-- I want a count down to registration... -->
       <div ng-show="hide_form">
-        <h5 class="center white">Investments Round Opens this Saturday</h5>
+        <h5 class="center" id="sub">Accepting investments starting in ...</h5>
         <div id="clockdiv">
           <div>
             <span id="days_left">99</span>
@@ -38,11 +38,11 @@
           </div>
           <div>
             <span id="minutes_left">99</span>
-            <div class="smalltext">Minutes</div>
+            <div class="smalltext">Mins</div>
           </div>
           <div>
             <span id="seconds_left">99</span>
-            <div class="smalltext">Seconds</div>
+            <div class="smalltext">Secs</div>
           </div>
         </div>
       </div>
