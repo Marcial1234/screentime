@@ -56,7 +56,7 @@ form input {
 }
 
 #clockdiv > div:nth-of-type(2n){
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .smalltext {
