@@ -1,20 +1,82 @@
+/*Testing Stuff*/
 
-body {
-  height: 1000px;
-  height: -webkit-fill-available;
-  overflow: hidden;
+#head{
+  grid-row: 1;
+  grid-column: 2;
+  align-content: center;
+  width: inherit;
+}
 
-  background: linear-gradient(to top right, #fc00ff, #00dbde);
-  background-repeat: no-repeat;
-  font-family: Helvetica, sans-serif;
+#content{
+  grid-row: 2;
+  grid-column: 2;
+  align-self: center;
+  justify-self: center;
+  align-content: center;
+}
+
+#clock{
+  grid-row: 3;
+  grid-column: 2;
+  align-self: center;
+  justify-self: center;
+  align-content: center;
+
+  text-align: center;
+  justify-self: center;
+  /*border-radius: 3px;*/
+
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#about{
+  grid-row: 4;
+  grid-column: 2;
+  align-content: center;
 }
 
 #app {
   /* CSS Grids!!! OP */
   /* Flex box is needed on the below */
   display: grid;
-  grid-template-rows: 11fr 5fr 5fr 3fr;
-  grid-template-columns: 2fr 4fr 2fr;
+  grid-template-rows: 2fr 8fr 8 14fr;
+  grid-template-columns: 1fr 4fr 1fr;
+  height: inherit;
+}
+
+/*#header{
+  grid-row: 1;
+  grid-column: 2;
+  align-content: center;
+}
+
+#formm {
+  grid-row: 2;
+  grid-column: 2;
+  align-self: center;
+  justify-self: center;
+  align-content: center;
+}
+
+#about{
+  grid-row: 3;
+  grid-column: 2;
+  align-content: center;
+}*/
+
+body {
+  /*height: 1000px;*/
+  /*height: -webkit-fill-available;*/
+  overflow: hidden;
+
+  /*background: linear-gradient(to top right, #fc00ff, #00dbde);*/
+  background-repeat: no-repeat;
+  font-family: Lato, sans-serif;
 }
 
 form input {
@@ -36,15 +98,6 @@ form input {
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
-/*
-h1 {
-  color: #396;
-  font-weight: 100;
-  font-size: 40px;
-  margin: 40px 0px 20px;
-}
-*/
-
 #clockdiv {
   /*width: 400px;*/
   text-align: center;
@@ -54,7 +107,7 @@ h1 {
   display: flex;
   display: -webkit-box;
   display: -ms-flexbox;
-  
+
   font-size: 35px;
   font-weight: 100;
   font-family: sans-serif;
@@ -84,19 +137,20 @@ h1 {
   padding-top: 5px;
 }
 
-#formm {
-  grid-row: 3;
-  grid-column: 2;
-  align-self: center;
-  justify-self: center;
-}
-
 .title {
   grid-row: 2;
   grid-column: 2;
   text-align: center;
 
   font-size: 40px;
+}
+
+.subtitle {
+  grid-row: 2;
+  grid-column: 2;
+  text-align: center;
+
+  font-size: 30px;
 }
 
 .money_input:focus {
@@ -110,7 +164,7 @@ h1 {
   display: inline;
 }
 
-the abosoluteness is not maintainable 
+the abosoluteness is not maintainable
 .money_symbol {
   // z-index: 1
   display: none;
@@ -141,7 +195,7 @@ the abosoluteness is not maintainable
 }
 
 /* Responsiveness Galore */
-@media (max-height: 1050px) {
+/*@media (max-height: 1050px) {
   #app {
     grid-template-rows: 11fr 2fr 4fr 3fr;
   }
@@ -156,7 +210,7 @@ the abosoluteness is not maintainable
 @media (min-height: 1050px) {
   #app {
     grid-template-rows: 17fr 2fr 5fr 3fr;
-  }
+  }*/
 
   h5 {
     font-size: 25px;
@@ -184,45 +238,4 @@ the abosoluteness is not maintainable
     padding: 5px;
     font-size: 25px;
   }
-}
-
-/* Old */
-.jumbotron {
-  background: #532F8C;
-  color: white;
-  padding-bottom: 80px;
-}
-
-.jumbotron .btn-primary {
-  background: #845ac7;
-  border-color: #845ac7;
-}
-
-.jumbotron .btn-primary:hover {
-  background: #7646c1;
-}
-
-.jumbotron p {
-  color: #d9ccee;
-  max-width: 75%;
-  margin: 1em auto 2em;
-}
-
-.navbar+.jumbotron {
-  margin-top: -20px;
-}
-
-.jumbotron .lang-logo {
-  display: block;
-  background: #B01302;
-  border-radius: 50%;
-  overflow: hidden;
-  width: 100px;
-  height: 100px;
-  margin: auto;
-  border: 2px solid white;
-}
-
-.jumbotron .lang-logo img {
-  max-width: 100%;
 }

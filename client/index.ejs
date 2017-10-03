@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <% include ./partials/header.ejs %>
 </head>
@@ -19,12 +19,15 @@
     </div>
     -->
 
-    <h3 class="white title">ScreenTime</h3>
-    <div id="formm" class="row" ng-app="ElectricApp" ng-controller="ElectricController" ng-init="start()">
-      <!-- <div style="width: 100%" ui-view></div> -->
-      <!-- <ui-view style="width: 100%"></ui-view> -->
+    <!-- TESTING -->
+    <!-- <div id ="header">
+      <h3 class="white title">ScreenTime</h3>
+    </div>
 
-      <!-- I want a count down to registration... -->
+    <div id="formm" class="row" ng-app="ElectricApp" ng-controller="ElectricController" ng-init="start()">
+       <div style="width: 100%" ui-view></div>
+      <ui-view style="width: 100%"></ui-view>
+
       <div ng-show="hide_form">
         <h5 class="center white">Investments Round Opens this Saturday</h5>
         <div id="clockdiv">
@@ -47,6 +50,40 @@
         </div>
       </div>
 
+    </div>
+    <div id="about">
+      <h3 class="white subtitle">About</h3>
+    </div> -->
+
+    <div id="head">
+      <h3 class="title">ScreenTime</h3>
+    </div>
+
+    <div id="content">
+      <h3 class="subtitle">Investment opens up in...</h3>
+    </div>
+
+    <div id="clock" class="row" ng-app="ElectricApp" ng-controller="ElectricController" ng-init="start()">
+      <div>
+        <span id="days_left">99</span>
+        <div class="smalltext">Days</div>
+      </div>
+      <div>
+        <span id="hours_left">99</span>
+        <div class="smalltext">Hours</div>
+      </div>
+      <div>
+        <span id="minutes_left">99</span>
+        <div class="smalltext">Minutes</div>
+      </div>
+      <div>
+        <span id="seconds_left">99</span>
+        <div class="smalltext">Seconds</div>
+      </div>
+    </div>
+
+    <div id="about">
+      <h3 class="subtitle">About</h3>
     </div>
   </div>
 </body>
@@ -71,7 +108,7 @@
       // hide all dynamic page elements if can't find anglar
       // and show some an error message gracefuly
       // $("#clockdiv").addClass("hidden");
-      
+
       $("#clockdiv").css("display", "none");
       alert("Plase try running this website again in another device");
     }
