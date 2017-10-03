@@ -2,41 +2,34 @@
 
 #head{
   grid-row: 1;
-  grid-column: 2;
+  /*grid-column: 2;*/
   align-content: center;
-  width: inherit;
+  height: 50px;
 }
 
 #content{
   grid-row: 2;
-  grid-column: 2;
-  align-self: center;
-  justify-self: center;
   align-content: center;
 }
 
 #clock{
   grid-row: 3;
-  grid-column: 2;
-  align-self: center;
-  justify-self: center;
   align-content: center;
 
   text-align: center;
   justify-self: center;
-  /*border-radius: 3px;*/
+  border-radius: 3px;
 
   display: flex;
   display: -webkit-box;
   display: -ms-flexbox;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 150px;
 }
 
 #about{
   grid-row: 4;
-  grid-column: 2;
+  /*grid-column: 2;*/
   align-content: center;
 }
 
@@ -44,9 +37,14 @@
   /* CSS Grids!!! OP */
   /* Flex box is needed on the below */
   display: grid;
-  grid-template-rows: 2fr 8fr 8 14fr;
-  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 2fr 8fr 8fr 14fr;
+  /*grid-template-columns: 1fr 4fr 1fr;*/
   height: inherit;
+}
+
+.clockitem{
+  width: 100px;
+  height: 100px;
 }
 
 /*#header{
@@ -70,8 +68,8 @@
 }*/
 
 body {
-  /*height: 1000px;*/
-  /*height: -webkit-fill-available;*/
+  height: 800px;
+  height: -webkit-fill-available;
   overflow: hidden;
 
   /*background: linear-gradient(to top right, #fc00ff, #00dbde);*/
