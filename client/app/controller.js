@@ -25,7 +25,7 @@ angular.module('Electric').controller('ElectricController',
     $scope.start = function() {
       Factory.getTime().then(
         function (res) {
-          var start_of_bidding = new Date(2017, 9, 7, 12);
+          var start_of_bidding = new Date(2017, 9, 7, 19);
           var current_server_time = new Date(res.data.time);
           
           var diff = start_of_bidding - current_server_time;

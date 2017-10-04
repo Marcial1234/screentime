@@ -25,9 +25,11 @@
       <!-- <ui-view style="width: 100%"></ui-view> -->
 
       <!-- I want a count down to registration... -->
-      <div ng-show="hide_form">
-        <h5 class="center" id="sub">Accepting investments starting in ...</h5>
+      <div ng-show="hide_form" class="hide_form">
         <div id="clockdiv">
+          <h5 class="center" id="sub">Accepting investments starting in ...</h5>
+          <p>&nbsp;</p>
+          
           <div>
             <span id="days_left">99</span>
             <div class="smalltext">Days</div>
@@ -44,10 +46,19 @@
             <span id="seconds_left">99</span>
             <div class="smalltext">Secs</div>
           </div>
+          <p>&nbsp;</p>
+
         </div>
       </div>
-
     </div>
+  
+    <div id="about-us">
+      <h3><b>About Us</b></h3>
+      <div>
+        We are ScreenTime, a video chatting platform that allows for easy one-on-one communication between content creators and their supporters.
+      </div>
+    </div>
+
   </div>
 </body>
 
