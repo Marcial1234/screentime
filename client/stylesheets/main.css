@@ -79,7 +79,7 @@ form input {
 
 .smalltext {
   font-size: 16px;
-  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 #formm {
@@ -128,7 +128,7 @@ form input {
     zoom: 75%%;
   }
 }
-
+  
 @media (min-height: 1050px) {
   #app {
     zoom: 150%;
