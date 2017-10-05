@@ -46,18 +46,8 @@ form input {
 
 .hide_form {
   width: 100%;
-  /*
-  display: grid;
-  grid-template-rows: 1fr 4fr;
-  */
   background-color: rgba(133, 87, 4, 0.58);
-
-  /*
-  text-align: center;
-  justify-self: center;
-  */
 }
-
 
 #clockdiv {
   text-align: center;
@@ -83,11 +73,9 @@ form input {
   border-radius: 150px;
 }
 
-
 #clockdiv > div:nth-of-type(n){
   margin-right: 10px;
 }
-
 
 .smalltext {
   font-size: 16px;
@@ -128,8 +116,6 @@ form input {
   justify-self: center;
 }
 
-
-
 /* Responsiveness Galore */
 @media (max-height: 1050px) {
   #app {
@@ -164,7 +150,7 @@ form input {
 
 @media (min-width: 1050px) {
   #clockdiv {
-    grid-template-columns: 3fr 1fr 1fr 1fr 1fr 3fr;
+    grid-template-columns: 4fr 1fr 1fr 1fr 1fr 4fr;
   }
 }
 
