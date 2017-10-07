@@ -23,50 +23,24 @@
     <div id="formm" class="row" ng-app="ElectricApp" ng-controller="ElectricController" ng-init="start()">
       <!-- <div style="width: 100%" ui-view></div> -->
       <!-- <ui-view style="width: 100%"></ui-view> -->
-
-      <!-- I want a count down to registration... -->
-      <div class="hide_form">
-        <div id="clockdiv">
-          <h5 class="center" id="sub">Accepting investments starting in ...</h5>
-          <p>&nbsp;</p>
-          
-          <div>
-            <span id="days_left">99</span>
-            <div class="smalltext">Days</div>
-          </div>
-          <div>
-            <span id="hours_left">99</span>
-            <div class="smalltext">Hours</div>
-          </div>
-          <div>
-            <span id="minutes_left">99</span>
-            <div class="smalltext">Mins</div>
-          </div>
-          <div>
-            <span id="seconds_left">99</span>
-            <div class="smalltext">Secs</div>
-          </div>
-          <p>&nbsp;</p>
-
-        </div>
+      <div class="hide_form" style="display: grid; grid-template-rows: 25% 25% auto">
+        <% include ./partials/invoice.html %>
       </div>
+
     </div>
   
     <div id="about-us">
+      <br>
       <h3><b>About Us</b></h3>
       <div>
         We are ScreenTime, a video chatting platform that allows for easy one-on-one communication between content creators and their supporters.
       </div>
-      
       <br>
       <iframe width="100%" height="315" src="https://www.youtube.com/embed/EXWEpElHY7U" frameborder="0" allowfullscreen></iframe>
-      
     </div>
 
   </div>
 </body>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 
 <script src="/public/angular/angular.js"></script>
 <script src="/public/angular-ui-router/release/angular-ui-router.js"></script>

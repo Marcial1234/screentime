@@ -31,7 +31,6 @@ form input {
 }
 */
 
-
 #app {
   /* CSS Grids!!! OP */
   display: grid;
@@ -114,6 +113,11 @@ form input {
   text-align: center;
   align-self: center;
   justify-self: center;
+}
+
+.modal {
+  margin: 30px;
+  margin-top: 25vh;
 }
 
 /* Responsiveness Galore */
@@ -202,6 +206,15 @@ the abosoluteness is not maintainable
   font-weight: bold;
 }
 */
+
+
+.form-group > * {
+  width: 90%;
+}
+
+.padded {
+  padding: 15px;
+}
 
 .center {
   text-align: center;

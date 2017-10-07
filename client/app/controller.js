@@ -6,11 +6,26 @@ var money_formatter = new Intl.NumberFormat('en-US', {
 });
 
 angular.module('Electric').controller('ElectricController',
-  ['$scope', '$location', '$stateParams', '$state', 'Factory',
-  function($scope, $location, $stateParams, $state, Factory) {
+  ['$rootScope', '$scope', '$location', 'Factory',
+  function($rootScope, $scope, $location, Factory) {
 
-    $scope.hide_form = true;
-    
+    $scope.range = [1,2,3];
+    $rootScope.us = [];
+    $rootScope.ids = {};
+    $rootScope.found = {};
+    $rootScope.investor = {"checks": 1};
+
+    Factory.getIP().then(
+      function(res) {
+        $rootScope.investor.ip = res.data;
+      }
+    );
+
+    $scope.reset = function() {
+      $rootScope.investor = {"checks": 1, "ip": $rootScope.investor.ip};
+      $("#investment_form").modal("hide");
+    }
+
     var update_counter = function() {
       $scope.time_to_go -= 1000;
       t = $scope.time_to_go;
@@ -23,6 +38,14 @@ angular.module('Electric').controller('ElectricController',
     }
 
     $scope.start = function() {
+      Factory.getNames().then(
+        function(res) {
+          $rootScope.ids = res.data;
+          $rootScope.us = $scope.ids.prohibited;
+          $rootScope.found = $scope.ids.people;
+        }
+      );
+
       Factory.getTime().then(
         function (res) {
           var start_of_bidding = new Date(2017, 9, 7, 19);
@@ -31,46 +54,26 @@ angular.module('Electric').controller('ElectricController',
           var diff = start_of_bidding - current_server_time;
           $scope.time_to_go = new Date(diff);
 
-          if (current_server_time < start_of_bidding)
-            setInterval(update_counter, 1000);
-          else
-            $scope.hide_form = false;
+          setInterval(update_counter, 1000);
       });
-      
-      // $scope.new_invoice = {};
-      // $scope.new_invoice.to = "investing@screentimeuf.com";
-      // $scope.new_invoice.email = true;
-      // $scope.new_invoice.empleados = 1;
-    }
-
-    if ($stateParams.successMessage) {
-      $scope.success = $stateParams.successMessage;
     }
 
     $scope.email = function(isValid) {
-      // $scope.error = null;
-      // // console.log($scope.new_invoice);
+      $rootScope.investor.name = $scope.found[$rootScope.investor.gatorlink];
+      $rootScope.investor.for = money_formatter.format($rootScope.investor.checks*20000);
 
-      // if (!$scope.new_invoice.extra)
-      //   $scope.new_invoice.extra = 0;
-
-      // $scope.new_invoice.to     = $scope.new_invoice.to.replace(" ", "").split(",");
-      // $scope.new_invoice.total  = $scope.new_invoice.empleados * $scope.new_invoice.precio * $scope.new_invoice.horas;
-      // $scope.new_invoice.total += $scope.new_invoice.materiales * (1 + ($scope.new_invoice.extra/100));
-
-      Factory.create($scope.new_invoice).then(
+      Factory.create($rootScope.investor).then(
         function(response) {
-          $state.go('Electric.invoice', 
-            { 
-              successMessage: 
-                "Factura por " + money_formatter.format($scope.new_invoice.total) +" enviada!" 
-            });
-          $scope.invoice();
+          var success = "Your request for " + $rootScope.investor.for + " of our shares has been sent!\nYou'll receive a confirmation email within 2 hours";
+          alert(success);
+          $scope.reset();
         },
         function(error) {
-          $scope.error = JSON.stringify(error);
           console.log(error);
-      });
+          alert("ERROR! Check the logs");
+          $scope.reset();
+        }
+      );
     };
   }
 ]);

@@ -1,47 +1,59 @@
-<div class="col-md-12 formWrapper">
+<h4 class="center white" style="grid-row: 2;">Investments are now Open!</h4>
 
-<br>
+<center style="grid-row: 3;">
+  <button data-toggle="modal" data-target="#investment_form" class="btn btn-primary">Join Us!</button>
+</center>
 
-<form name="invoice_form" class="form-horizontal" ng-hide="hide_form" ng-submit="email(invoice_form.$valid)">
-  <!-- make a list of vars for the text and placeholders in the controller -->
-  <span ng-show="new_invoice.cliente">Nombre del Cliente</span>
-  <input ng-model="new_invoice.cliente"
-         placeholder="Nombre del Cliente" type="text">
-  <!-- 
+<center>
+<div class="modal hide" id="investment_form" 
+      tabindex="-1" role="dialog"
+      data-keyboard="true">
 
-  <span ng-show="new_invoice.direcion">Direción del Cliente</span>
-  <input ng-model="new_invoice.direcion"
-         placeholder="Direción del Cliente" type="text">
+  <div class="modal-content">
+    <h3 class="center padded">Investment Form</h3>
 
-  <span ng-show="new_invoice.empleados"># de empleados que trabajaron*</span>
-  <input ng-model="new_invoice.empleados" 
-         placeholder="# de empleados que trabajaron*" required type="number" step="any">
+    <div class="form-group padded">
+    <input placeholder="GatorLink Username (the start of your UF email)" ng-model="investor.gatorlink" type="text" style="margin-bottom: 0;">
+    </div>
 
-  <span ng-show="new_invoice.horas">Horas trabajadas*</span>
-  <input ng-model="new_invoice.horas"
-         placeholder="Horas trabajadas*" required type="number" step="any">
+    <div class="modal-body" ng-show="found.hasOwnProperty(investor.gatorlink)">
+    <form ng-submit="email(investment_form.$valid)">
 
-  <span ng-show="new_invoice.precio">Precio/Hora</span>
-  <input ng-model="new_invoice.precio" class="money_input"
-         placeholder="Precio/Hora*" required type="number" step="any">
-   -->
-  <!-- <span ng-show="new_invoice.precio" class="money_symbol" style="top: 305px; left: 23px;">$</span> -->
+      <div class="form-group" style="margin-top: -25px;">
+        <b>Hi {{found[investor.gatorlink]}}!</b>
+      </div>
+      
+      <div class="form-group">
+        <span>Number of Checks you want to invest in us</span>
+        <br>
+        <select ng-model="investor.checks" ng-options="num for num in range"required>
+        </select>
+      </div>
 
-  <span ng-show="new_invoice.materiales">Precio de materiales*</span>
-  <input ng-model="new_invoice.materiales" class="money_input"
-         placeholder="Precio de materiales*" required type="number" step="any">
-  <!-- <span class="money_symbol" style="top: 359px; left: 23px;">$</span> -->
+      <div class="form-group">
+        <span><b>Optional:</b> Another email that you check more often than your UFL's</span>
+        <br>
+        <input placeholder="Extra Email" ng-model="investor.extra_emails" type="email">
+      </div>
 
-  <span ng-show="new_invoice.extra">% Arriba de materiales</span>
-  <input ng-model="new_invoice.extra" 
-         placeholder="% Arriba de materiales" class="money_input" type="number" step="any">
+      <div class="form-group">
+      <input class="hidden" type="submit" data-dismiss="modal" data-target="#investment_form">
+      <input value="Let's build great things together!" 
+             class="btn btn-success form-group" type="submit"
+             style="margin-bottom: -25px;">
+      </div>
+    </form>
+    </div>
 
-  <p class="center"><small class="center">* Requerido</small></p>
-  <div ng-show="error" class="text-danger"> <strong ng-bind="error"></strong> </div>
-  <div ng-show="success" class="text-success"> <strong ng-bind="success"></strong> </div>
-  
-  <input value="Mandamela la factura!" class="btn btn-primary form-group" type="submit"/>
-  <input class="hidden" type="submit"/>
-</form>
+    <div class="padded" ng-hide="us.indexOf(investor.gatorlink) != -1 || found.hasOwnProperty(investor.gatorlink)">
+      If entering your GatorLink does nothing, please <a href="mailto:investments@screentimeuf.com" target="_blank"> email us </a>
+    </div>
 
+    <div class="padded" ng-show="us.indexOf(investor.gatorlink) != -1">
+      Sorry guys, we can't invest in our own company</div>
+
+    <div>&nbsp;</div>
+    <button class="btn btn-danger padded" ng-click="reset()">Clear and Return</button>
+  </div>
 </div>
+</center>

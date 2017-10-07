@@ -9,22 +9,12 @@ var money_formatter = new Intl.NumberFormat('en-US', {
 });
 
 var format_invoice_html = function (form) {
-  // To be changed A LOT!!!
-  console.log("PORTTTTTT: " + (process.env.PORT||5000));
-  var message = [];
   
-  // var ignore_attributes = {email: 1, to: 1, extra: 1, subject:1, };
-  // var money_attributes  = {precio: 1, materiales: 1, total: 1,};
+  var message = [];
 
   var attributes = Object.keys(form);
   attributes.forEach(function(atr) {
     message.push(["<b>", atr.toUpperCase(), "</b>: ", form[atr]].join(""));
-
-    // if (!(atr in ignore_attributes) && form[atr]) {
-    //   if (atr in money_attributes) {
-    //     form[atr] = money_formatter.format(form[atr]);
-    //   }
-    // }
   });
 
   return message.join("<br>");
@@ -33,28 +23,22 @@ var format_invoice_html = function (form) {
 
 module.exports = function (req, res) {
 
-  var message = [];
-  if (req.body.email) {
-    if (!req.body.cliente) {
-      req.body.cliente = "FACTURA SIN NOMBRE";
-    } else {
-      req.body.subject = ["Factura de", req.body.cliente].join(" ");
-    }
-    
-    // Doble verify time here... or not!
-    message = format_invoice_html(req.body);
+  // Double check end of investment round here
+  if (new Date() > new Date(2017, 9, 10, 12))
+  {
+    console.log(req.body);
+    console.log("nice try!");
+    return;
   }
-  else {
-    // handle simple logger
-    req.body = {to: message, subject: "Prueba"};
-    message = JSON.stringify(req.body);
-  }
+
+  var message = format_invoice_html(req.body);
+  var subject = "Investment from " + req.body.name; 
 
   // Basic Email Settings
   var mailOptions = {
     to: [process.env.GMAIL_USERNAME].concat(req.body.to),
     from: process.env.GMAIL_USERNAME,
-    subject: req.body.subject,
+    subject: subject,
     html: message
   };
 

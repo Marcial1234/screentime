@@ -28,6 +28,10 @@ module.exports.init = function() {
   // use the listings router for requests to the api
   app.use('/api', routes);
 
+  app.all('/loophole', function(req, res) {
+    res.render('investment');
+  });
+
   // go to homepage for all routes not specified
   app.all('/*', function(req, res) {
     res.render('index');

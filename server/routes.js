@@ -1,9 +1,14 @@
 var emailHandler = require("./emailing");
 var express = require('express');
 var router = express.Router();
-
+var names = require("./names");
 
 router.route('/').post(emailHandler);
+
+router.route('/people').get(
+  function(req, res) {
+    res.json(names);
+});
 
 router.route('/time').get(
   function(req, res) {
