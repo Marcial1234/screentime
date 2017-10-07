@@ -59,7 +59,7 @@ angular.module('Electric').controller('ElectricController',
     }
 
     $scope.email = function(isValid) {
-      $rootScope.investor.name = $scope.found[$rootScope.investor.gatorlink];
+      $rootScope.investor.name = $scope.found[$rootScope.investor.gatorlink.toLowerCase()];
       $rootScope.investor.for = money_formatter.format($rootScope.investor.checks*20000);
 
       Factory.create($rootScope.investor).then(
