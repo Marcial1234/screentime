@@ -29,12 +29,12 @@ module.exports.init = function() {
   app.use('/api', routes);
 
   app.all('/loophole', function(req, res) {
-    res.render('investment');
+    res.render('index');
   });
 
   // go to homepage for all routes not specified
   app.all('/*', function(req, res) {
-    res.render('index');
+    res.render('investment');
   });
 
   return app;
