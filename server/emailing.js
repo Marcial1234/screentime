@@ -24,7 +24,7 @@ var format_invoice_html = function (form) {
 module.exports = function (req, res) {
 
   // Double check end of investment round here
-  if (new Date() > new Date(2017, 9, 10, 12))
+  if (new Date() > new Date(2017, 10, 4, 12))
   {
     console.log(req.body);
     console.log("nice try!");
@@ -36,7 +36,7 @@ module.exports = function (req, res) {
 
   // Basic Email Settings
   var mailOptions = {
-    to: [process.env.GMAIL_USERNAME].concat(req.body.to),
+    to: [process.env.GMAIL_USERNAME, "investments@screentimeuf.com"].concat(req.body.to),
     from: process.env.GMAIL_USERNAME,
     subject: subject,
     html: message

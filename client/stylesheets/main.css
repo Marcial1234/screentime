@@ -244,13 +244,15 @@ the abosoluteness is not maintainable
   padding-bottom: 80px;
 }
 
-.jumbotron .btn-primary {
-  background: #845ac7;
-  border-color: #845ac7;
+#dale {
+  color: white;
+  background: #38cc70;
+  border-color: #38cc70;
 }
 
-.jumbotron .btn-primary:hover {
-  background: #7646c1;
+#dale:hover {
+  background: #2ba659;
+  border-color: #2ba659;
 }
 
 .jumbotron p {
