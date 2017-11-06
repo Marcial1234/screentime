@@ -24,7 +24,7 @@ var format_invoice_html = function (form) {
 module.exports = function (req, res) {
 
   // Double check end of investment round here
-  if (new Date() > new Date(2017, 10, 4, 12))
+  if (new Date() > new Date(2017, 10, 7, 12))
   {
     console.log(req.body);
     console.log("nice try!");
