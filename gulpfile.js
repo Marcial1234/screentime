@@ -6,11 +6,12 @@ var exec = require('child_process').exec;
 var nodemon = require('gulp-nodemon');
 
 gulp.task('default', ['get-config', 'nodemon', 'browser-sync']);
-gulp.task('install', ['npm', 'default']);
 
-gulp.task('npm', function(cb) {
-    exec("npm install -g gulp");
-});
+// this doesn't server its purpose
+// gulp.task('install', ['npm', 'default']);
+// gulp.task('npm', function(cb) {
+//     exec("npm install -g gulp");
+// });
 
 gulp.task('get-config', function(cb) {
     exec("heroku config -s > .env");
@@ -20,7 +21,7 @@ gulp.task('browser-sync', function() {
     bs.init(null, {
         proxy: "http://localhost:5000",
         port: "5001",
-        files: ["client/**/*.*", "public/**/*.*"],
+        files: ["client/**/*.*", "dependencies/**/*.*"],
         browser: "chrome"
     });
 });

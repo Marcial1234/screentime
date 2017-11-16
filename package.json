@@ -2,11 +2,10 @@
   "main": "index.js",
   "author": "Marcial Abrahantes",
   "name": "ScreenTime",
-  "version": "0.2.6",
   "description": "Screen Time - [Fancy marketing thing here]",
   "scripts": {
-    "first-install": "npm install && gulp install",
-    "start": "npm install && node index.js",
+    "first-install": "npm install && npm install -g gulp",
+    "start": "npm install && gulp",
     "test": "node test.js"
   },
   "dependencies": {

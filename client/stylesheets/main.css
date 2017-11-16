@@ -92,7 +92,7 @@ form input {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  background-image: url("/public/background.jpg");
+  background-image: url("/dependencies/background.jpg");
 }
 
 #sub {

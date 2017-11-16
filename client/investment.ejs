@@ -24,7 +24,7 @@
       <!-- <div style="width: 100%" ui-view></div> -->
       <!-- <ui-view style="width: 100%"></ui-view> -->
       <div class="hide_form" style="display: grid; grid-template-rows: 25% 25% auto">
-        <% include ./partials/invoice.html %>
+        <% include ./partials/investing-splash.ejs %>
       </div>
 
     </div>
@@ -54,8 +54,9 @@
 
 <script type="text/javascript">
   $("document").ready(function() {
-    if (location.protocol != 'http:')
-      location.protocol = "http:";
+    // trying to fix security issues with exports ~ decided just to download them ALL
+    // if (location.protocol != 'http:')
+    //   location.protocol = "http:";
 
     try {
       angular;
@@ -63,9 +64,6 @@
     catch (ReferenceError) {
       // hide all dynamic page elements if can't find anglar
       // and show some an error message gracefuly
-      // $("#clockdiv").addClass("hidden");
-      
-      // $("#clockdiv").ccss("display", "none");
       $("#clockdiv").html("<h5 class=\"center\" id=\"sub\">Accepting investments starting this Saturday</h5>");
       alert("Plase try running this website again in another device");
     }
