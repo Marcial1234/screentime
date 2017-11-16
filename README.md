@@ -1,7 +1,7 @@
 # ScreenTime
 
 ## Dependencies
-- [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) and *have an account with Heroku*
+- [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) and **have an account with Heroku**
 - [Node.js and npm >6.x](https://nodejs.org/en/download/), choose LTS (long-term support) version
 
 ## Installation
