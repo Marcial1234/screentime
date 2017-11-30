@@ -255,6 +255,15 @@ the abosoluteness is not maintainable
   border-color: #2ba659;
 }
 
+.pres {
+  color: white;
+  background-color: grey;
+}
+
+.pres:hover {
+  background-color: black;
+}
+
 .jumbotron p {
   color: #d9ccee;
   max-width: 75%;
